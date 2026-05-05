@@ -44,39 +44,16 @@ These runs require GPU resources and may download large language models and rewa
 
 API keys and service credentials should be provided through local untracked config files or environment variables. Do not commit `configs/services/*.yaml` with real secrets.
 
-### Citation
+## Citation
+
+This online reproduction code is built on the SAIL framework for self-improving online alignment. If you use this repository or the online training pipeline, please cite SAIL:
 
 ```bibtex
-@inproceedings{anonymous2026robustlistwise,
-  title={Distributionally Robust Listwise Preference Optimization via Pointwise Total-Variation Ambiguity over Ranking Labels},
-  author={Anonymous},
-  booktitle={NeurIPS},
-  year={2026}
+@article{ding2024sail,
+  title={SAIL: Self-Improving Efficient Online Alignment of Large Language Models},
+  author={Ding, Mucong and Chakraborty, Souradip and Agrawal, Vibhu and Che, Zora and Koppel, Alec and Wang, Mengdi and Bedi, Amrit and Huang, Furong},
+  journal={arXiv preprint arXiv:2406.15567},
+  year={2024},
+  url={https://arxiv.org/abs/2406.15567}
 }
 ```
-
----
-
-## Upstream: SAIL — Self-Improving Efficient Online Alignment of Large Language Models
-
-A lightweight plugin for Huggingface's DPOTrainer, achieving up to 11.6% win-rate improvement with minimal overhead compared to fast DPO.
-
-### Step 1: Filling YAML Configs
-1. We need HuggingFace Hub and WanDB to manage experiments. Please fill in `./configs/services/huggingface.yaml` and `./configs/services/wandb.yaml` with your account info.
-2. We need OpenAI api to evaluate models. Please fill in `./configs/services/openai.yaml` with your account info.
-3. We use a HuggingFace Space App to retrieve and review results. Please fill in `./viewer/.env` with your account info.
-
-### Step 2: Installation
-1. With `python 3.10.*` and `CUDA 12.*` installed. You can run `pip install -e .` to install this package called `cdpo`.
-
-### Step 3: Config the Experiments to Run
-1. Fill in or modify `./configs/tasks.yaml` for the set of experiments to run.
-
-### Step 4: Run Experiments
-1. Run command `cdpo execute` to run all experiments specified.
-
-### Step 5: View Results
-1. Inside `./viewer` folder, run `streamlit run app.py` to start the result viewer. Using the UI there to analyse the results.
-
-### Training time and memory requirements
-The approximate training time and memory requirements of each SAIL training on three models are: Qwen1.5-0.5B: 1–4 hours with 4×A40 GPUs; Phi-3-3.8B: 2–8 hours with 4×RTX6000Ada GPUs; Llama-3-8B: 2–12 hours with 4×A100 GPUs.

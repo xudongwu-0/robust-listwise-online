@@ -160,3 +160,17 @@ writes a JSON dump and a Markdown table.
   shift absolute reward scores.
 - Service credential YAMLs under `configs/services/` are git-ignored;
   fill in your own before any Hub upload / GPT-judge run.
+
+## Citation
+
+This online reproduction code is built on the SAIL framework for self-improving online alignment. If you use this repository or the online training pipeline, please cite SAIL:
+
+```bibtex
+@article{ding2024sail,
+  title={SAIL: Self-Improving Efficient Online Alignment of Large Language Models},
+  author={Ding, Mucong and Chakraborty, Souradip and Agrawal, Vibhu and Che, Zora and Koppel, Alec and Wang, Mengdi and Bedi, Amrit and Huang, Furong},
+  journal={arXiv preprint arXiv:2406.15567},
+  year={2024},
+  url={https://arxiv.org/abs/2406.15567}
+}
+```
