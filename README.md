@@ -44,9 +44,9 @@ These runs require GPU resources and may download large language models and rewa
 
 API keys and service credentials should be provided through local untracked config files or environment variables. Do not commit `configs/services/*.yaml` with real secrets.
 
-## Citation
+## Built on SAIL
 
-This online reproduction code is built on the SAIL framework for self-improving online alignment. If you use this repository or the online training pipeline, please cite SAIL:
+This online reproduction code is built on the SAIL framework for self-improving online alignment. The original SAIL work is:
 
 ```bibtex
 @article{ding2024sail,
@@ -56,4 +56,3 @@ This online reproduction code is built on the SAIL framework for self-improving 
   year={2024},
   url={https://arxiv.org/abs/2406.15567}
 }
-```
